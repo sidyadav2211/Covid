@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Data</title>
+    <!-- links -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .sp1{
+            display: inline-block;
+           
+            border: 2px solid gray;  
+            border-radius: 6px;  
+            padding: 10px;
+            margin: 20px;
+            text-align: justify; }
+           .sp2{
+               display: inline-block;
+                text-align: justify;
+                margin: 20px;
+                padding: 10px;
+                   
+                border: 2px solid gray; 
+                border-radius: 6px;    }
+    </style>
+</head>
+<body>
+    <h1>
+        Covid Data
+    </h1>
+    <div id="app">
+        <h2 style="text-align: center;" >Global </h2>
+        <h1>Cases</h1>
+        <section class="sp1">
+            <span > NewConfirmed: {{global.NewConfirmed}}</span>
+            <span>||</span>
+            <span > TotalConfirmed:  {{global.TotalConfirmed}}</span>
+        </section>
+        <br>
+        <hr>
+        <section class="sp2">
+            <span > NewDeaths: {{global.NewDeaths}}</span>
+            <span>||</span>
+        <span > TotalDeaths: {{global.TotalDeaths}}</span>
+        </section>
+        <br>
+        <hr>
+       <section class="sp1">
+        <span > NewRecovered: {{global.NewRecovered}}</span>
+        <span>||</span>
+        <span > TotalRecovered: {{global.TotalRecovered}}</span>
+       </section>
+        
+       <hr>
+       <!-- <input type="text" placeholder="Enter country name here:" v-model="search"> -->
+       <!-- <button  v-on:click="fetchCovid()"  >Button</button> -->
+      <h4>List of countrys</h4>
+       <ul>
+           <li v-for= "count in allCount " >
+               <h4>{{count.Country}}</h4>
+               <span> NewConfirmed:{{ count.NewConfirmed }}</span>
+               <span>TotalConfirmed:  {{ count.TotalConfirmed }}</span>
+               <span> NewDeaths :{{ count.NewDeaths }}</span>
+               <span> TotalDeaths:{{ count.TotalDeaths }}</span>
+           </li>
+       </ul>
+       
+       <!-- <ul>
+           <li v-for="cont in allCount" >
+               <h3>{{cont.Country}}</h3>
+           </li>
+       </ul> -->
+    </div>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+    <script src="index.js"></script>
+</body>
+</html>
