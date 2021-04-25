@@ -54,11 +54,11 @@
        </section>
         
        <hr>
-       <!-- <input type="text" placeholder="Enter country name here:" v-model="search"> -->
+       <input type="text" placeholder="Enter country name here:" v-model="search">
        <!-- <button  v-on:click="fetchCovid()"  >Button</button> -->
       <h4>List of countrys</h4>
        <ul>
-           <li v-for= "count in allCount " >
+           <li v-for= "count in filterCountry " >
                <h4>{{count.Country}}</h4>
                <span> NewConfirmed:{{ count.NewConfirmed }}</span>
                <span>TotalConfirmed:  {{ count.TotalConfirmed }}</span>

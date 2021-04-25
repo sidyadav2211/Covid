@@ -34,7 +34,13 @@ new Vue({
             // console.log('Click')
         }
     },
-  
+    computed:{
+        filterCountry:function(){
+            return this.allCount.filter((countary)=>{
+                return countary.Country.match(this.search)
+            })
+        }
+    },
      mounted(){
         axios.get("https://api.covid19api.com/summary")
         .then(res=>{
